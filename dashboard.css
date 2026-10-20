@@ -1,0 +1,414 @@
+/* dashboard.css -- member dashboard for Ibile Thrift & Credit.
+   Typography: using DISPLAY LARGE as customized in the design system.
+   Colours: design-system ROLES only (--color-*). 
+   Shadows: --effect-*. No primitives, no raw colour values.
+
+   GAP (design system): tokens-complete.json defines NO spacing, radius, or
+   opacity tokens. The --space-* and --radius-* variables below are LOCAL
+   PLACEHOLDERS for this screen only. */
+
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --radius-card: 8px;
+  --radius-chip: 8px;
+  --radius-button: 8px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--typography-body-large-font-family), system-ui, -apple-system, sans-serif;
+  font-size: var(--typography-body-large-font-size);
+  line-height: var(--typography-body-large-line-height);
+}
+
+/* ---------- typography roles from the design system ---------- */
+
+.type-display-large {
+  font-family: var(--typography-display-large-font-family);
+  font-size: var(--typography-display-large-font-size);
+  line-height: var(--typography-display-large-line-height);
+  font-weight: var(--typography-display-large-font-weight);
+  letter-spacing: var(--typography-display-large-letter-spacing);
+  text-decoration: var(--typography-display-large-text-decoration);
+  font-style: var(--typography-display-large-font-style);
+  font-stretch: var(--typography-display-large-font-stretch);
+  text-transform: var(--typography-display-large-text-case);
+  margin: 0;
+}
+
+.type-title-medium {
+  font-family: var(--typography-title-medium-font-family);
+  font-size: var(--typography-title-medium-font-size);
+  line-height: var(--typography-title-medium-line-height);
+  font-weight: var(--typography-title-medium-font-weight);
+  letter-spacing: var(--typography-title-medium-letter-spacing);
+  margin: 0;
+}
+
+.type-body-large {
+  font-family: var(--typography-body-large-font-family);
+  font-size: var(--typography-body-large-font-size);
+  line-height: var(--typography-body-large-line-height);
+  font-weight: var(--typography-body-large-font-weight);
+  letter-spacing: var(--typography-body-large-letter-spacing);
+  margin: 0;
+}
+
+.type-body-medium {
+  font-family: var(--typography-body-medium-font-family);
+  font-size: var(--typography-body-medium-font-size);
+  line-height: var(--typography-body-medium-line-height);
+  font-weight: var(--typography-body-medium-font-weight);
+  letter-spacing: var(--typography-body-medium-letter-spacing);
+  margin: 0;
+}
+
+.type-body-small {
+  font-family: var(--typography-body-small-font-family);
+  font-size: var(--typography-body-small-font-size);
+  line-height: var(--typography-body-small-line-height);
+  font-weight: var(--typography-body-small-font-weight);
+  letter-spacing: var(--typography-body-small-letter-spacing);
+  margin: 0;
+}
+
+/* ---------- app bar ---------- */
+
+.appbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.appbar__brand {
+  font-family: var(--typography-title-medium-font-family);
+  font-size: var(--typography-title-medium-font-size);
+  line-height: var(--typography-title-medium-line-height);
+  font-weight: var(--typography-title-medium-font-weight);
+  color: var(--color-on-surface);
+}
+
+.appbar__member {
+  font-family: var(--typography-body-small-font-family);
+  font-size: var(--typography-body-small-font-size);
+  line-height: var(--typography-body-small-line-height);
+  color: var(--color-on-surface-variant);
+}
+
+/* ---------- page ---------- */
+
+.page {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* sync / provenance banner */
+
+.sync-banner {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface-container-low);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-card);
+  color: var(--color-on-surface-variant);
+  font-family: var(--typography-body-small-font-family);
+  font-size: var(--typography-body-small-font-size);
+  line-height: var(--typography-body-small-line-height);
+}
+
+.sync-banner__dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-button);
+  background: var(--color-success);
+  transform: translateY(-1px);
+}
+
+/* ---------- cards ---------- */
+
+.card {
+  padding: var(--space-5);
+  background: var(--color-surface-container);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-card);
+  box-shadow: var(--effect-soft-shadow);
+}
+
+.card__title {
+  color: var(--color-on-surface-variant);
+  margin-bottom: var(--space-4);
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-outline-variant);
+  margin: var(--space-4) 0;
+}
+
+/* ---------- figures: numbers first, plain provenance under each ---------- */
+
+.figure + .figure {
+  margin-top: 0;
+}
+
+.figure__label {
+  color: var(--color-on-surface-variant);
+}
+
+.figure__amount {
+  color: var(--color-on-surface);
+  margin-top: var(--space-1);
+  word-break: break-word;
+}
+
+.figure__source {
+  color: var(--color-on-surface-variant);
+  margin-top: var(--space-2);
+}
+
+.link {
+  color: var(--color-primary);
+  font: inherit;
+  text-decoration: underline;
+}
+
+.link:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ---------- two-up stats ---------- */
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin: 0;
+}
+
+.stat dt {
+  color: var(--color-on-surface-variant);
+  font-family: var(--typography-body-medium-font-family);
+  font-size: var(--typography-body-medium-font-size);
+  line-height: var(--typography-body-medium-line-height);
+  margin: 0;
+}
+
+.stat dd {
+  margin: var(--space-1) 0 0;
+  color: var(--color-on-surface);
+  font-family: var(--typography-title-medium-font-family);
+  font-size: var(--typography-title-medium-font-size);
+  line-height: var(--typography-title-medium-line-height);
+  font-weight: var(--typography-title-medium-font-weight);
+}
+
+.stat__meta {
+  color: var(--color-on-surface-variant);
+  font-family: var(--typography-body-small-font-family);
+  font-size: var(--typography-body-small-font-size);
+  line-height: var(--typography-body-small-line-height);
+  font-weight: var(--typography-body-small-font-weight);
+  margin-top: var(--space-1);
+}
+
+/* ---------- chips ---------- */
+
+.chip {
+  display: inline-block;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-chip);
+  font-family: var(--typography-label-small-font-family);
+  font-size: var(--typography-label-small-font-size);
+  line-height: var(--typography-label-small-line-height);
+  font-weight: var(--typography-label-small-font-weight);
+  letter-spacing: var(--typography-label-small-letter-spacing);
+  vertical-align: middle;
+}
+
+.chip--paid {
+  background: var(--color-success-container);
+  color: var(--color-on-success-container);
+}
+
+.chip--due {
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+}
+
+.chip--late {
+  background: var(--color-error-container);
+  color: var(--color-on-error-container);
+}
+
+/* ---------- borrow card ---------- */
+
+.card--borrow {
+  background: var(--color-primary-container);
+  border-color: var(--color-primary-container);
+  box-shadow: none;
+}
+
+.card--borrow .card__title,
+.card--borrow h2 {
+  color: var(--color-on-primary-container);
+}
+
+.borrow__text {
+  color: var(--color-on-primary-container);
+  margin: var(--space-3) 0 var(--space-5);
+}
+
+/* ---------- buttons ---------- */
+
+.btn {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding: var(--space-3) var(--space-4);
+  border: none;
+  border-radius: var(--radius-button);
+  font-family: var(--typography-label-large-font-family);
+  font-size: var(--typography-label-large-font-size);
+  line-height: var(--typography-label-large-line-height);
+  font-weight: var(--typography-label-large-font-weight);
+  letter-spacing: var(--typography-label-large-letter-spacing);
+  cursor: pointer;
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.btn--text {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  margin-top: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border: none;
+  background: none;
+  border-radius: var(--radius-button);
+  color: var(--color-primary);
+  font-family: var(--typography-label-large-font-family);
+  font-size: var(--typography-label-large-font-size);
+  line-height: var(--typography-label-large-line-height);
+  font-weight: var(--typography-label-large-font-weight);
+  letter-spacing: var(--typography-label-large-letter-spacing);
+  cursor: pointer;
+}
+
+/* ---------- loan repayment progress ---------- */
+
+.repay__summary {
+  color: var(--color-on-surface);
+  margin: var(--space-2) 0 var(--space-3);
+}
+
+.progress {
+  height: 8px;
+  border-radius: var(--radius-button);
+  background: var(--color-secondary-container);
+  overflow: hidden;
+}
+
+.progress__fill {
+  height: 100%;
+  width: 33%;
+  background: var(--color-primary);
+}
+
+.repay__meta {
+  color: var(--color-on-surface-variant);
+  margin-top: var(--space-2);
+}
+
+/* ---------- recent activity ---------- */
+
+.activity {
+  list-style: none;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+}
+
+.activity__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--color-outline-variant);
+}
+
+.activity__row:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.activity__what {
+  color: var(--color-on-surface);
+  font-family: var(--typography-body-medium-font-family);
+  font-size: var(--typography-body-medium-font-size);
+  line-height: var(--typography-body-medium-line-height);
+}
+
+.activity__when {
+  display: block;
+  color: var(--color-on-surface-variant);
+  font-family: var(--typography-body-small-font-family);
+  font-size: var(--typography-body-small-font-size);
+  line-height: var(--typography-body-small-line-height);
+}
+
+.activity__amount {
+  flex: none;
+  color: var(--color-on-surface);
+  font-family: var(--typography-title-small-font-family);
+  font-size: var(--typography-title-small-font-size);
+  line-height: var(--typography-title-small-line-height);
+  font-weight: var(--typography-title-small-font-weight);
+  white-space: nowrap;
+}
+
+/* ---------- footer ---------- */
+
+.footer {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4) var(--space-6);
+  color: var(--color-on-surface-variant);
+  text-align: center;
+}

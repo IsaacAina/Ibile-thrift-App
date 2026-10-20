@@ -1,0 +1,19 @@
+- Where brand color came from: My primary color is a cool color recommended by ChatGPT as my Brand color.
+
+- Paragraph on the visible difference before and after pinning primary 40: Before pinning, the primary color tonal palette is generated automatically, so the Primary 40 shade doesn't match my chosen brand color. After pinnng, #3157D5 is fixed as Primary 40, ensuring the palette uses my chosen brand color.
+
+- Number of tones from tonal palettes and why the number is enough for light and dark from one source: Material 3 uses 13 tones in ech tonal palette. These tones provide enough variation to create both light and dark themes from a sibgle source color because they range from fully dark to fully light (0-100), with additional tones for text, backgrounds, surfaces, borders, and interactive elements.
+
+- 1.5x is used for all body text. The reason is because headings are meant to be more visually compact, while boy text needs more space for sustained reading.
+
+- What changed between the default and chosen spacing is the Display Large Typography style being changed from default Material 3 settings to use Inter as the font family hile keeping the font size at 57px, and the line height at 64px. I set the letter spacing to 0% instea of the default -0.25px and kept the font weight at Regular (400). This gives the style a clean, modern appearance while maintaining the large text size and compact line spacing.
+
+- For my Display Large typography style, I changed the default Material 3 font family from Roboto to Inter because Inter has a clean, modern appearance that works well for digital interfaces. However, this choice could be wrong if my product needs a more distinctive brand personality or if another font better suits the overall design.
+- I kept the font size at 57 and the line height at 64 because these are the default Material 3 values for Display Large. They provide a clear visual hierarchy and compact spacing for large text. However, these values might not work well on smaller screens if the heading takes up too much space or feels crowded when it wraps onto multiple lines.
+- I changed the letter spacing from the default -0.25px to 0% because I wanted the text to have normal spacing and a more natural appearance. However, this could be wrong if the text looks too loose or less cohesive, especially in short or uppercase headings.
+- I kept the font weight at Regular (400) because I wanted a clean, lighter appearance rather than a heavy heading. However, Regular might not provide enough emphasis if the heading needs to stand out strongly from the surrounding content.
+  Overall, my changes focus on maintaining the Material 3 structure while adapting the typography to Inter and my preferred visual style.
+
+- A shadow built from the brand color creates a subtle tint that feels more harmonious with the interface and reinforces the brand identity. A black shadow feels more neutral and often creates a stronger, more natural sense of depth, but it can look harsher against colored surfaces.
+
+- 

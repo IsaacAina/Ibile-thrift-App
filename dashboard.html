@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-NG">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ibile Thrift &amp; Credit — My dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header class="appbar">
+    <div class="appbar__brand">Ibile Thrift &amp; Credit</div>
+    <div class="appbar__member">Mrs. Folake Adeyemi · Member ILT-0427</div>
+  </header>
+
+  <main class="page">
+    <p class="sync-banner">
+      <span class="sync-banner__dot" aria-hidden="true"></span>
+      <span>Figures from the society ledger, updated today 6:42pm. Saved on this phone.</span>
+    </p>
+
+    <section class="card" aria-labelledby="position-heading">
+      <h1 id="position-heading" class="type-title-medium card__title">Your position today</h1>
+
+      <div class="figure">
+        <p class="figure__label type-body-medium">Total savings</p>
+        <p class="figure__amount type-display-large">₦245,000</p>
+        <p class="figure__source type-body-small">Every contribution you have paid, plus interest.</p>
+      </div>
+
+      <hr class="divider">
+
+      <div class="figure">
+        <p class="figure__label type-body-medium">Loan outstanding</p>
+        <p class="figure__amount type-display-large">₦212,400</p>
+        <p class="figure__source type-body-small">
+          8 of 24 payments made.
+          <a class="link" href="#repayment">See how this was worked out</a>
+        </p>
+      </div>
+
+      <hr class="divider">
+
+      <dl class="stat-grid">
+        <div class="stat">
+          <dt>Last contribution</dt>
+          <dd>₦5,000 <span class="chip chip--paid">Paid</span></dd>
+          <dd class="stat__meta">Sat 17 Oct</dd>
+        </div>
+        <div class="stat">
+          <dt>Next due</dt>
+          <dd>₦5,000 <span class="chip chip--due">Due Sat</span></dd>
+          <dd class="stat__meta">Sat 24 Oct · weekly</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="card card--borrow" aria-labelledby="borrow-heading">
+      <h2 id="borrow-heading" class="type-title-medium">You can borrow up to ₦180,000 today</h2>
+      <p class="borrow__text type-body-large">
+        Worked out from your savings and 14 months of contributions without a break.
+        If you borrow, the money is paid by transfer, usually the same week.
+      </p>
+      <button class="btn btn--primary" type="button">Ask about a loan</button>
+      <button class="btn--text" type="button">See what you would pay back</button>
+    </section>
+
+    <section class="card" id="repayment" aria-labelledby="repayment-heading">
+      <h2 id="repayment-heading" class="type-title-medium">Loan repayment</h2>
+      <p class="repay__summary type-body-large">₦212,400 left to pay of ₦334,000</p>
+      <div class="progress" role="progressbar" aria-valuenow="37" aria-valuemin="0" aria-valuemax="100"
+           aria-label="Loan repayment: 8 of 24 payments made">
+        <div class="progress__fill"></div>
+      </div>
+      <p class="repay__meta type-body-small">
+        8 of 24 monthly payments. Next payment ₦16,000 on 24 Oct. Your last payment was posted Fri 16 Oct.
+      </p>
+    </section>
+
+    <section class="card" aria-labelledby="activity-heading">
+      <h2 id="activity-heading" class="type-title-medium">Recent activity</h2>
+      <ul class="activity">
+        <li class="activity__row">
+          <span class="activity__what">
+            Contribution
+            <span class="activity__when">Sat 17 Oct · paid at the shop</span>
+          </span>
+          <span class="activity__amount">₦5,000 <span class="chip chip--paid">Paid</span></span>
+        </li>
+        <li class="activity__row">
+          <span class="activity__what">
+            Loan payment
+            <span class="activity__when">Fri 16 Oct · bank transfer</span>
+          </span>
+          <span class="activity__amount">₦16,000 <span class="chip chip--paid">Paid</span></span>
+        </li>
+        <li class="activity__row">
+          <span class="activity__what">
+            Contribution
+            <span class="activity__when">Sat 10 Oct · paid at the shop</span>
+          </span>
+          <span class="activity__amount">₦5,000 <span class="chip chip--paid">Paid</span></span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer type-body-small">
+    <p>Ibile Thrift &amp; Credit Cooperative Society Ltd · Mushin, Lagos · Est. 2011</p>
+    <p>Every figure above comes from the society ledger. Ask the treasurer if anything looks wrong.</p>
+  </footer>
+</body>
+</html>
