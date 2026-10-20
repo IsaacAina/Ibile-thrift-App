@@ -1,0 +1,41 @@
+# Raw Color Values search command
+grep -rnIiE \
+  --exclude-dir={node_modules,dist,build,.git} \
+  --exclude={tokens.css,package-lock.json,"*.lock"} \
+  '#([0-9a-f]{8}|[0-9a-f]{6}|[0-9a-f]{3,4})\b|\b(rgba?|hsla?|hwb|lab|lch|oklab|oklch)\(' .
+
+# Search Command output
+-449c-9ef6-30b375a5533bAt line:2 char:5
++   --exclude-dir={node_modules,dist,build,.git} \
++     ~
+Missing expression after unary operator '--'.
+At line:2 char:5
++   --exclude-dir={node_modules,dist,build,.git} \
++     ~~~~~~~~~~~~
+Unexpected token 'exclude-dir=' in expression or statement.
+At line:2 char:30
++   --exclude-dir={node_modules,dist,build,.git} \
++                              ~
+Missing argument in parameter list.
+At line:3 char:5
++   --exclude={tokens.css,package-lock.json,"*.lock"} \    
++     ~
+Missing expression after unary operator '--'.
+At line:3 char:5
++   --exclude={tokens.css,package-lock.json,"*.lock"} \
++     ~~~~~~~~
+Unexpected token 'exclude=' in expression or statement.
+At line:3 char:24
++   --exclude={tokens.css,package-lock.json,"*.lock"} \
++                        ~
+Missing argument in parameter list.
+At line:4 char:90
++ ... a-f]{6}|[0-9a-f]{3,4})\b|\b(rgba?|hsla?|hwb|lab|lch|oklab|oklch)\(' .
++                                                                         ~
+Unexpected token '.' in expression or statement.
+At line:4 char:90
++ ... a-f]{6}|[0-9a-f]{3,4})\b|\b(rgba?|hsla?|hwb|lab|lch|oklab|oklch)\(' .
++                                                                         ~
+Missing expression after '.' in pipeline element.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
