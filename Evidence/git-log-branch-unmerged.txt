@@ -1,0 +1,34 @@
+PS C:\Users\USER\Desktop\Ibile thrift App> git add -A
+>> git commit -m "test: deliberate token regression (throwaway)"
+>> git log --oneline --graph --all
+warning: in the working copy of 'tokens.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'preview.html', LF will be replaced by CRLF the next time Git touches it
+[broken 6b0a31e] test: deliberate token regression (throwaway)
+ 3 files changed, 4195 insertions(+), 241 deletions(-)
+ create mode 100644 preview.html
+ create mode 100644 tokens-complete-mod.json
+ create mode 100644 tokens-complete-mod.json
+* 6b0a31e (HEAD -> broken) test: deliberate token regression (throwaway)
+* 51a31fb (origin/main, origin/HEAD, main) Remove agent typography answer
+* 7871b45 Add agent typography answer
+* 8ee1458 New and modified files
+* 28a4a7d Initial design-system tokens + en               hboard (Display Large applied)
+
+PS C:\Users\USER\Desktop\Ibile thrift App> git switch main
+>> git branch -d broken
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+error: the branch 'broken' is not fully merged
+hint: If you are sure you want to delete it, run 'git branch -D broken'        
+hint: Disable this message with "git config set advice.forceDeleteBranch false"
+
+PS C:\Users\USER\Desktop\Ibile thrift App> git branch -D broken
+>> git branch
+>> git log --oneline --graph --all
+Deleted branch broken (was 6b0a31e).
+* main
+* 51a31fb (HEAD -> main, origin/main, origin/HEAD) Remove agent typography answer
+* 7871b45 Add agent typography answer
+* 8ee1458 New and modified files
+* 28a4a7d Initial design-system tokens + enforcement + dashboard (Display Large applied)
+PS C:\Users\USER\Desktop\Ibile thrift App> 

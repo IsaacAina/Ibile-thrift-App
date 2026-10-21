@@ -1,0 +1,5 @@
+1. Changing the brand colour at the source updated every role that referenced the palette, but action-primary stayed blue because it held a raw hex value with no link back to the palette.
+
+2. That is the whole argument for token referencing: a single change in one place reaches everything that points to it, and anything that doesn’t point to it silently falls out of sync.
+
+3. Without referencing, a rebrand means hunting through every file for hardcoded values and hoping none were missed, which is how inconsistent interfaces ship.
