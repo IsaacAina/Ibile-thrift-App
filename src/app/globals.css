@@ -1,0 +1,31 @@
+/* Global styles - Ibile Thrift App */
+@import "../../tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--typography-body-large-font-family), system-ui, -apple-system, sans-serif;
+  font-size: var(--typography-body-large-font-size);
+  line-height: var(--typography-body-large-line-height);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

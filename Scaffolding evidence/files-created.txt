@@ -1,0 +1,35 @@
+# Files Created During Scaffolding
+
+## Configuration & Project Setup
+1. .gitignore - Excludes node_modules, .next build output, and environment secret files.
+2. package.json - Configures Next.js 14, React 18, TypeScript, build, typecheck, and token verification scripts.
+3. tsconfig.json - Strict TypeScript compiler configuration with @/* path alias.
+4. next.config.mjs - Next.js framework configuration.
+5. next-env.d.ts - TypeScript environment declarations for Next.js.
+
+## Type Definitions
+6. src/types/roles.ts - Defines UserRole enum (MEMBER, ADMIN, FOUNDER) and UserSession.
+7. src/types/ledger.ts - AuditableFigure and MemberPosition domain models with integer kobo and provenance fields.
+8. src/types/css.d.ts - Type declarations for CSS modules (*.module.css).
+
+## Domain Logic & Utilities
+9. src/lib/money.ts - Money helpers (formatNaira, nairaToKobo, koboToNaira) enforcing integer whole-kobo arithmetic.
+
+## Styling & Layout
+10. src/app/globals.css - Imports tokens.css, sets box-sizing, and establishes body styling using design tokens only.
+11. src/app/layout.tsx - Root HTML layout with en-NG language, viewport, and Inter font loading.
+
+## Home Screen Components (Minimal Passbook)
+12. src/app/page.tsx - Server component rendering the minimal passbook home screen.
+13. src/app/page.module.css - Token-only layout styles for the passbook page container.
+14. src/components/AppBar.tsx - Header component displaying cooperative brand and generic member ID.
+15. src/components/AppBar.module.css - Token-only styles for AppBar.
+16. src/components/SyncBanner.tsx - Banner component displaying ledger source, update timestamp, and cache status.
+17. src/components/SyncBanner.module.css - Token-only styles for SyncBanner.
+18. src/components/PositionCard.tsx - Passbook card showing Display Large savings, loan outstanding, and contributions stat grid.
+19. src/components/PositionCard.module.css - Token-only styles for PositionCard.
+
+## Documentation & Evidence Artifacts
+20. Scaffolding evidence/model-choices.md - Architecture, role reconciliation, and money modeling documentation.
+21. Scaffolding evidence/agent-plan.txt - Step-by-step scaffolding plan.
+22. Scaffolding evidence/files-created.txt - Complete record of all created files and their purposes.

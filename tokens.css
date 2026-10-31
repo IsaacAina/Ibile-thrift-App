@@ -420,4 +420,21 @@
   --effect-hard-shadow-offset-y: 10px;
   --effect-hard-shadow-spread: 0px;
   --effect-hard-shadow: var(--effect-hard-shadow-offset-x) var(--effect-hard-shadow-offset-y) var(--effect-hard-shadow-radius) var(--effect-hard-shadow-spread) var(--effect-hard-shadow-color);
+
+  /* ============================================
+     Spacing & Layout (Design System Gap Resolution)
+     ============================================ */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  /* ============================================
+     Border Radius (Design System Gap Resolution)
+     ============================================ */
+  --radius-card: 8px;
+  --radius-chip: 8px;
+  --radius-button: 8px;
 }

@@ -1,0 +1,128 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-card);
+  box-shadow: var(--effect-soft-shadow);
+}
+
+.title {
+  font-family: var(--typography-title-medium-font-family);
+  font-size: var(--typography-title-medium-font-size);
+  line-height: var(--typography-title-medium-line-height);
+  font-weight: var(--typography-title-medium-font-weight);
+  letter-spacing: var(--typography-title-medium-letter-spacing);
+  color: var(--color-on-surface);
+  margin: 0;
+}
+
+.figure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.label {
+  font-family: var(--typography-body-medium-font-family);
+  font-size: var(--typography-body-medium-font-size);
+  line-height: var(--typography-body-medium-line-height);
+  font-weight: var(--typography-body-medium-font-weight);
+  color: var(--color-on-surface-variant);
+  margin: 0;
+}
+
+.amount {
+  font-family: var(--typography-display-large-font-family);
+  font-size: var(--typography-display-large-font-size);
+  line-height: var(--typography-display-large-line-height);
+  font-weight: var(--typography-display-large-font-weight);
+  letter-spacing: var(--typography-display-large-letter-spacing);
+  color: var(--color-on-surface);
+  margin: 0;
+}
+
+.source {
+  font-family: var(--typography-body-small-font-family);
+  font-size: var(--typography-body-small-font-size);
+  line-height: var(--typography-body-small-line-height);
+  font-weight: var(--typography-body-small-font-weight);
+  color: var(--color-on-surface-variant);
+  margin: 0;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-outline-variant);
+  margin: 0;
+}
+
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.statLabel {
+  font-family: var(--typography-body-medium-font-family);
+  font-size: var(--typography-body-medium-font-size);
+  line-height: var(--typography-body-medium-line-height);
+  color: var(--color-on-surface-variant);
+  margin: 0;
+}
+
+.statValue {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--typography-title-medium-font-family);
+  font-size: var(--typography-title-medium-font-size);
+  line-height: var(--typography-title-medium-line-height);
+  font-weight: var(--typography-title-medium-font-weight);
+  color: var(--color-on-surface);
+  margin: 0;
+}
+
+.statMeta {
+  font-family: var(--typography-body-small-font-family);
+  font-size: var(--typography-body-small-font-size);
+  line-height: var(--typography-body-small-line-height);
+  color: var(--color-on-surface-variant);
+  margin: 0;
+}
+
+.chipPaid {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-chip);
+  background-color: var(--color-success-container);
+  color: var(--color-on-success-container);
+  font-family: var(--typography-label-small-font-family);
+  font-size: var(--typography-label-small-font-size);
+  line-height: var(--typography-label-small-line-height);
+  font-weight: var(--typography-label-small-font-weight);
+}
+
+.chipDue {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-chip);
+  background-color: var(--color-warning-container);
+  color: var(--color-on-warning-container);
+  font-family: var(--typography-label-small-font-family);
+  font-size: var(--typography-label-small-font-size);
+  line-height: var(--typography-label-small-line-height);
+  font-weight: var(--typography-label-small-font-weight);
+}

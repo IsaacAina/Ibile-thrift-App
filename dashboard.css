@@ -3,21 +3,7 @@
    Colours: design-system ROLES only (--color-*). 
    Shadows: --effect-*. No primitives, no raw colour values.
 
-   GAP (design system): tokens-complete.json defines NO spacing, radius, or
-   opacity tokens. The --space-* and --radius-* variables below are LOCAL
-   PLACEHOLDERS for this screen only. */
-
-:root {
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 24px;
-  --space-6: 32px;
-  --radius-card: 8px;
-  --radius-chip: 8px;
-  --radius-button: 8px;
-}
+   Spacing and radius tokens are now defined centrally in tokens.css. */
 
 *,
 *::before,

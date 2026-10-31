@@ -1,0 +1,63 @@
+# Scaffolding Implementation Plan — Ibile Thrift App
+
+## 1. Objectives & Boundaries
+- **Objective**: Scaffold the project structure and build a minimal, auditable home screen ("Your position today") for Ibile Thrift & Credit Cooperative Society Ltd.
+- **Strict Boundary**: Build only the project setup and minimal home screen. Do not build product features (e.g. loan application workflows, repayment posting, payment gateway integrations, Gemini vector sync).
+- **Core Constraints**:
+  - 100% Design Token usage (no hardcoded colors, spacing, or typography values).
+  - Money stored strictly in whole kobo (integers); formatted in exact Naira (`₦...`) with auditable provenance and timestamps.
+  - Follow role structure (`MEMBER` / `user`, `ADMIN`, `FOUNDER`) with strict self-scoping of member data.
+  - No use of forbidden member names ("Mrs. Folake Adeyemi") in code or screen text.
+  - Preserve all rules and skills in `.agents/rules/` and `.agents/skills/`.
+
+---
+
+## 2. Step-by-Step Implementation Plan
+
+### Step 1: Project Setup & Package Configuration
+- **Task**: Set up minimal Next.js App Router and TypeScript configurations.
+- **Files**:
+  - `package.json`: Next.js 14 LTS, React 18, React-DOM, TypeScript, ESLint.
+  - `tsconfig.json`: Strict TypeScript configuration with `@/*` path aliases.
+  - `next.config.mjs`: Minimal Next.js configuration.
+- **Verification**: Ensure dependencies and scripts align with project rules; confirm zero stray scripts.
+
+### Step 2: Design Token & Layout Integration
+- **Task**: Connect `tokens.css` into the Next.js styling pipeline without breaking token layers.
+- **Files**:
+  - `src/app/globals.css`: Imports `tokens.css`, establishes base box-sizing and root font-family using `--typography-body-large-font-family` and `--color-background`.
+  - `src/app/layout.tsx`: Root HTML layout setting `<html lang="en-NG">`, metadata, viewport, and Inter font loading.
+- **Verification**: Run `check-primitive-usage.ps1` to ensure no raw hex or primitive values were introduced.
+
+### Step 3: Type Definitions & Money Utilities
+- **Task**: Implement strongly-typed domain interfaces and integer-kobo money helpers.
+- **Files**:
+  - `src/types/roles.ts`: `UserRole` enum (`MEMBER`, `ADMIN`, `FOUNDER`).
+  - `src/types/ledger.ts`: `AuditableFigure`, `MemberPosition` (tracking `amountKobo`, `source`, `lastUpdated`, `isCached`).
+  - `src/lib/money.ts`:
+    - `formatNaira(amountKobo: number): string` -> outputs formatted Naira (e.g. `₦245,000`).
+    - `koboToNaira(amountKobo: number): number`.
+- **Verification**: Unit tests/assertions validating that arithmetic uses whole integers and produces exact Naira strings without floating-point drift.
+
+### Step 4: Minimal Home Screen Components
+- **Task**: Construct the passbook "Your position today" interface using semantic tokens only.
+- **Files**:
+  - `src/components/AppBar.tsx` & `src/components/AppBar.module.css`:
+    - Cooperative brand header and member identifier badge (`Member ILT-0427`, omitting forbidden name).
+  - `src/components/SyncBanner.tsx` & `src/components/SyncBanner.module.css`:
+    - Cache & provenance banner indicating ledger origin, sync timestamp, and offline status.
+  - `src/components/PositionCard.tsx` & `src/components/PositionCard.module.css`:
+    - Total Savings and Loan Outstanding using `--typography-display-large-*` and `--color-primary`.
+    - Stat grid for Last Contribution and Next Due amount.
+    - Explicit provenance line for each figure (`Every contribution you have paid, plus interest`).
+  - `src/app/page.tsx`:
+    - Server component rendering the minimal home screen layout with read-only initial position.
+- **Verification**: Run `check-primitive-usage.ps1` to confirm 100% token compliance across all CSS modules.
+
+### Step 5: Audit, Verification & Final Evidence Recording
+- **Task**: Perform strict self-audit and log all created artifacts.
+- **Actions**:
+  - Run `check-primitive-usage.ps1` to verify zero primitive or raw color usages.
+  - Run TypeScript compile check (`npx tsc --noEmit`).
+  - Update `Scaffolding evidence/files-created.txt` with every created file and its purpose.
+  - Review changes against all applying rules in `.agents/rules/`.

@@ -7,7 +7,7 @@ $root = $PSScriptRoot
 $self = 'check-primitive-usage.ps1'
 $failures = @()
 
-$excludeDirs = @('\.git', '\node_modules', '\Evidence', '\scripts')
+$excludeDirs = @('\.git', '\node_modules', '\Evidence', '\scripts', '\.next')
 $codeExts = @('.css', '.scss', '.sass', '.less', '.js', '.jsx', '.ts', '.tsx', '.vue', '.svelte', '.html')
 
 $files = Get-ChildItem -Path $root -Recurse -File -Include ($codeExts | ForEach-Object { "*$_" }) |
